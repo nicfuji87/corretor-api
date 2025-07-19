@@ -1,0 +1,24 @@
+name: Keep API Alive
+
+on:
+  schedule:
+    # Executa a cada 14 minutos para evitar cold start
+    - cron: '*/14 * * * *'
+  workflow_dispatch: # Permite execução manual
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Ping API
+      run: |
+        echo "🏓 Fazendo ping na API para mantê-la viva..."
+        curl -f https://corretor-api.onrender.com/ping || echo "❌ Ping falhou"
+        echo "✅ Ping concluído!"
+        
+    - name: Ping endpoint principal
+      run: |
+        echo "🏓 Testando endpoint principal..."
+        curl -f https://corretor-api.onrender.com/ || echo "❌ Endpoint principal falhou"
+        echo "✅ Teste do endpoint principal concluído!" 

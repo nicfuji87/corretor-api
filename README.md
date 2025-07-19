@@ -158,6 +158,7 @@ fetch('GET /fila-atual')
 - **Fallback**: Continua funcionando mesmo se Google Sheets falhar
 - **Logs Detalhados**: Monitora todos os envios e erros
 - **Validação**: Verifica integridade dos dados
+- **Keep Alive**: Ping automático para evitar cold start no Render
 
 ## 🔧 Detecção Automática de Mudanças
 
@@ -179,12 +180,20 @@ Perfeito para automação com n8n:
 
 ## 🌐 Deploy
 
-### Vercel ⭐ (Recomendado)
-Arquivo `vercel.json` incluído para deploy automático.
-✅ Dependências otimizadas para < 250MB
+### Render ⭐ (Recomendado)
+✅ 100% gratuito para sempre
 ✅ Deploy automático via GitHub
+✅ GitHub Actions com ping automático (evita cold start)
+✅ Zero configuração necessária
+
+### Configuração do Ping Automático
+A API inclui GitHub Actions que fazem ping a cada 14 minutos para evitar cold start:
+- **Endpoint:** `GET /ping` 
+- **Frequência:** A cada 14 minutos
+- **Status:** Automático via GitHub Actions
 
 ### Outras Plataformas
+- Vercel (configuração incluída)
 - Heroku
 - Railway
 - DigitalOcean

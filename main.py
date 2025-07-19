@@ -419,6 +419,15 @@ _Equipe Realiza Imóveis_ 🏡"""
 async def root():
     return {"message": "API Fila de Corretores - Funcionando"}
 
+@app.get("/ping")
+async def ping():
+    """Endpoint para manter API viva - chamado a cada 14 minutos"""
+    return {
+        "status": "alive",
+        "timestamp": datetime.now().isoformat(),
+        "message": "API mantida viva pelo ping automatico"
+    }
+
 @app.get("/health")
 async def health_check():
     env_status = {
