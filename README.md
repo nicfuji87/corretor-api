@@ -179,8 +179,10 @@ Perfeito para automação com n8n:
 
 ## 🌐 Deploy
 
-### Vercel
+### Vercel ⭐ (Recomendado)
 Arquivo `vercel.json` incluído para deploy automático.
+✅ Dependências otimizadas para < 250MB
+✅ Deploy automático via GitHub
 
 ### Outras Plataformas
 - Heroku
