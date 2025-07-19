@@ -38,9 +38,12 @@ ENV/
 .env.production.local
 
 # Google Credentials
-*.json
 credentials.json
 service-account-*.json
+google-credentials*.json
+
+# Vercel config is allowed
+!vercel.json
 
 # IDE
 .vscode/
