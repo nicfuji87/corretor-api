@@ -72,7 +72,7 @@ source venv/bin/activate  # Linux/Mac
 .\venv\Scripts\activate   # Windows
 
 # Instale dependências
-pip install -r requirements_txt.txt
+pip install -r requirements.txt
 
 # Configure variáveis de ambiente
 cp env_example.sh .env
